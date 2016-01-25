@@ -14,7 +14,8 @@ for i in range(3):
     url = 'http://community.topcoder.com/tc?cc=392&sc=&sd=&cc=392&module=AlgoRank&nr={}&sr={}'.format(N, i*N+1)
     res = requests.get(url)
     if res.status_code != 200:
-        print('(ΦωΦ)＜not 200')
+        print('(ΦωΦ)＜not 200', file=sys.stderr)
+        exit(1)
     res0 = res.content.decode('utf-8')
     doc = lxml.html.fromstring(res0)
     ele = doc.xpath("//table[contains(@class, 'stat')]/tbody/tr/td[2]/a")
