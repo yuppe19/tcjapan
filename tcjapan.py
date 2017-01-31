@@ -11,6 +11,8 @@ N = 200
 sett = set(line.strip() for line in sys.stdin.readlines())
 
 for i in xrange(3):
+    if i:
+        sleep(1.1)
     sys.stderr.write('{}ページめをやります ... '.format(i+1))
     sys.stderr.flush()
     url = 'http://community.topcoder.com/tc?cc=392&sc=&sd=&cc=392&module=AlgoRank&nr={}&sr={}'.format(N, i*N+1)
@@ -25,6 +27,5 @@ for i in xrange(3):
         sett.add(e.text)
     sys.stderr.write('完了\n')
     sys.stderr.flush()
-    sleep(1.1)
 
 print '\n'.join(sorted(sett))
