@@ -1,5 +1,4 @@
-#!/usr/bin/python2
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3
 # †
 import sys
 import requests
@@ -14,7 +13,7 @@ N = 200
 
 players = set()
 
-for i in xrange(3):
+for i in range(3):
     if i:
         sleep(1.1)
     nya('{}ページめをやります ... '.format(i+1))
